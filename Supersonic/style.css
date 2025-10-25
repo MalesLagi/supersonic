@@ -148,23 +148,3 @@ footer {
   color: #888;
   font-size: 0.9rem;
 }
-
-.btn {
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(45deg, #00ffe0, #ff00ff);
-  border: none;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.3s;
-  box-shadow: 0 0 10px #00ffe0, 0 0 20px #ff00ff;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 10px #00ffe0, 0 0 20px #ff00ff; }
-  50% { box-shadow: 0 0 20px #00ffe0, 0 0 40px #ff00ff; }
-  100% { box-shadow: 0 0 10px #00ffe0, 0 0 20px #ff00ff; }
-}
-
-
