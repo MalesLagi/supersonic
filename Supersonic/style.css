@@ -53,34 +53,59 @@ header {
   display: flex; justify-content: center; align-items: center;
   text-align: center;
 }
+
 .hero .overlay {
   position: absolute;
   top:0; left:0; width:100%; height:100%;
   background: rgba(0,0,0,0.6);
 }
+
 .hero-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; /* jarak antar elemen */
+  text-align: center;
+  padding: 0 1rem;
 }
+
 .hero-content h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
   color: #00ffe0;
 }
 .hero-content span { color: #ff00ff; }
+
+.hero-content p {
+  margin-bottom: 1.5rem; /* jarak sebelum tombol */
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+/* Tombol dengan neon pulse */
 .btn {
   padding: 0.8rem 1.5rem;
-  background: linear-gradient(45deg,#00ffe0,#ff00ff);
+  background: linear-gradient(45deg, #00ffe0, #ff00ff);
   border: none;
   color: #fff;
   border-radius: 5px;
   text-decoration: none;
   transition: 0.3s;
+  box-shadow: 0 0 10px #00ffe0, 0 0 20px #ff00ff;
+  animation: pulse 2s infinite;
 }
 .btn:hover { opacity: 0.8; }
 
-/* Sections */
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #00ffe0, 0 0 20px #ff00ff; }
+  50% { box-shadow: 0 0 20px #00ffe0, 0 0 40px #ff00ff; }
+  100% { box-shadow: 0 0 10px #00ffe0, 0 0 20px #ff00ff; }
+}
+
+/* Sections umum */
 section { padding: 5rem 3rem; text-align: center; }
 
 .menu-grid, .gaming-grid, .gallery-grid {
@@ -147,4 +172,15 @@ footer {
   padding: 1rem;
   color: #888;
   font-size: 0.9rem;
+}
+
+/* Scroll Animasi */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
